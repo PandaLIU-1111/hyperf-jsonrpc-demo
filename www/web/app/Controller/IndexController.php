@@ -14,6 +14,7 @@ namespace App\Controller;
 
 use App\JsonRpc\AdditionService;
 use App\JsonRpc\MultiplicationService;
+use App\JsonRpc\SayService;
 
 class IndexController extends Controller
 {
@@ -49,6 +50,16 @@ class IndexController extends Controller
             'a' => $a,
             'b' => $b,
             'multiply' => $multiplicaton->multiply($a, $b)
+        ];
+    }
+
+    public function say(SayService $sayService)
+    {
+        $str = (string)$this->request->input('str');
+
+        return [
+            'str' => $str,
+            'say' => $sayService->say($str),
         ];
     }
 }

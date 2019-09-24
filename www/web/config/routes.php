@@ -16,3 +16,4 @@ Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@i
 
 Router::get('/add', 'App\Controller\IndexController@add');
 Router::get('/multiply', 'App\Controller\IndexController@multiply');
+Router::get('/say', 'App\Controller\IndexController@say');
